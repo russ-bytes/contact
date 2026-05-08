@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Business Online — Simple, Fast, Local</title>
+    <!--
+      DEPLOYMENT: Replace 27000000000 with your WhatsApp number (27XXXXXXXXX, no +, no spaces)
+      Then push to GitHub Pages. URL: https://[username].github.io/[repo]/
+      FLAT BLUE v2 — same look, thicker font + more spacing
+    -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+        :root {
+            --bg: #FFFFFF;
+            --primary: #2563EB;
+            --secondary: #DBEAFE;
+            --secondary-hover: #BFDBFE;
+            --accent: #1D4ED8;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --surface: #F8FAFC;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .wrap {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 5rem 0 4rem;
+        }
+
+        .container {
+            padding: 0 1.25rem;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .animate:nth-child(1) { animation-delay: 0.1s; }
+        .animate:nth-child(2) { animation-delay: 0.2s; }
+        .animate:nth-child(3) { animation-delay: 0.3s; }
+        .animate:nth-child(4) { animation-delay: 0.4s; }
+        .animate:nth-child(5) { animation-delay: 0.5s; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.875rem 1.5rem;
+            border-radius: 999px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            text-decoration: none;
+            min-height: 48px;
+            transition: transform 150ms ease, background 150ms ease;
+        }
+
+        .btn:active {
+            transform: scale(0.96);
+        }
+
+        .btn:hover {
+            background: var(--accent);
+        }
+
+        .btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary-hover);
+        }
+
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 2rem 0 3rem;
+        }
+
+        .tagline {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 0.375rem 1rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 360px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 500;
+        }
+
+        /* PROBLEM */
+        .problem {
+            padding: 3rem 0;
+        }
+
+        .section-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-sub {
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-size: 1.0625rem;
+            font-weight: 500;
+        }
+
+        .pain-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .pain-card {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            background: var(--bg);
+        }
+
+        .pain-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.875rem;
+        }
+
+        .pain-question {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .pain-answer {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ── SOLUTION / 3D CARD ── */
+        .solution {
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .card-3d-scene {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1400px;
+            margin: 2.5rem auto 0;
+            height: 560px;
+            overflow: hidden;
+        }
+
+        .card-3d {
+            width: 220px;
+            background: #1E293B;
+            border-radius: 24px;
+            padding: 20px 16px 18px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.05s cubic-bezier(0.25, 0.46, 0.45, 0.94), scale 0.05s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: default;
+            will-change: transform, scale;
+box-shadow:
+                0 40px 80px rgba(30,41,59,0.35),
+                0 0 0 1px rgba(255,255,255,0.05);
+            filter: blur(0.8px);
+            will-change: transform, scale;
+            cursor: default;
+            transition:
+                transform 0.05s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                filter 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .card-3d:hover {
+            filter: blur(0px);
+        }
+
+        .card-badge {
+            display: inline-block;
+            background: rgba(37,99,235,0.15);
+            color: #60A5FA;
+            font-size: 0.5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            border-radius: 999px;
+            margin-bottom: 0.5rem;
+            border: 1px solid rgba(37,99,235,0.25);
+        }
+
+        .card-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563EB, #1D4ED8);
+            margin: 0 auto 0.35rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 4px 16px rgba(37,99,235,0.4);
+        }
+
+        .card-name {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            color: #F1F5F9;
+            margin-bottom: 0.15rem;
+            letter-spacing: -0.01em;
+        }
+
+        .card-tagline {
+            font-size: 0.6rem;
+            color: #94A3B8;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .card-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .card-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 10px;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            transition: transform 120ms ease, opacity 120ms ease;
+            cursor: default;
+        }
+
+        .card-link:active {
+            transform: scale(0.96);
+            opacity: 0.8;
+        }
+
+        .card-link svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+        .card-link-whatsapp {
+            background: #2563EB;
+            color: white;
+        }
+
+        .card-link-call {
+            background: rgba(255,255,255,0.08);
+            color: #F1F5F9;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .card-link-email {
+            background: rgba(255,255,255,0.06);
+            color: #94A3B8;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .card-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+            margin: 0.2rem 0;
+        }
+
+        .card-services {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.25rem;
+            margin-top: 0.2rem;
+        }
+
+        .card-svc {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 6px;
+            padding: 0.3rem 0.4rem;
+            text-align: center;
+        }
+
+        .card-svc-name {
+            font-size: 0.525rem;
+            font-weight: 600;
+            color: #F1F5F9;
+            display: block;
+            margin-bottom: 0.08rem;
+        }
+
+        .card-svc-price {
+            font-size: 0.5rem;
+            color: #60A5FA;
+            font-weight: 500;
+        }
+
+        .card-social {
+            display: flex;
+            justify-content: center;
+            gap: 0.4rem;
+            margin-top: 0.625rem;
+            padding-top: 0.625rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .card-social-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94A3B8;
+            font-size: 0.65rem;
+        }
+
+        .card-footer-bar {
+            position: absolute;
+            bottom: 10px;
+            left: 16px;
+            right: 16px;
+            height: 3px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 2px;
+        }
+
+        /* ambient glow */
+        .card-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* PACKAGES */
+        .packages {
+            padding: 3rem 0;
+        }
+
+        .packages-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+.package-card {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.75rem;
+            background: var(--bg);
+            position: relative;
+        }
+
+        .package-name {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .package-for {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .package-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .package-time {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            font-weight: 500;
+        }
+
+        .package-features li {
+            font-size: 1rem;
+            color: var(--text-dark);
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .package-card.featured {
+            background: var(--secondary);
+            border-color: var(--primary);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 999px;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .package-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .package-for {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .package-price {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .package-time {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .package-features {
+            list-style: none;
+        }
+
+        .package-features li {
+            font-size: 0.875rem;
+            color: var(--text-dark);
+            padding: 0.375rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .package-features li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* STATS */
+        .stats {
+            padding: 3rem 0;
+        }
+
+        .stats-grid {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            flex: 1;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            background: var(--surface);
+        }
+
+        .stat-number {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 3rem 0;
+        }
+
+        .faq-list {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: 1.5rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem;
+            background: var(--bg);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .faq-a {
+            color: var(--text-dark);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* CTA BLOCK */
+        .cta-block {
+            padding: 3rem 0;
+        }
+
+        .cta-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .cta-card h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.875rem;
+        }
+
+        .cta-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.75rem;
+            font-size: 1.0625rem;
+            font-weight: 500;
+        }
+
+        .cta-sub {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- HERO -->
+        <section class="hero container">
+            <div class="tagline animate">Helderberg · Somerset West · Gordons Bay</div>
+            <h1 class="animate">One tap to book you — not scroll past you.</h1>
+            <p class="animate">A mobile contact page with your services, prices, and a WhatsApp button. Live in 24 hours. No jargon, no monthly fees.</p>
+            <a href="#packages" class="btn animate">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                See what you get
+            </a>
+        </section>
+
+        <!-- PROBLEM -->
+        <section class="problem container">
+            <div class="section-label animate">Sound familiar?</div>
+            <div class="pain-grid">
+                <div class="pain-card animate">
+                    <div class="pain-icon">💬</div>
+                    <div class="pain-question">"I get DMs but they go cold."</div>
+                    <div class="pain-answer">People want to message you but can't find your info in one place. By the time they search around, they've moved on.</div>
+                </div>
+                <div class="pain-card animate">
+                    <div class="pain-icon">📱</div>
+                    <div class="pain-question">"My number's everywhere online."</div>
+                    <div class="pain-answer">Your phone number is on Facebook, flyers, business cards. You can't update it without reprinting everything.</div>
+                </div>
+                <div class="pain-card animate">
+                    <div class="pain-icon">💸</div>
+                    <div class="pain-question">"I can't afford a website."</div>
+                    <div class="pain-answer">Full websites cost thousands. You just need something simple — your services, prices, and a way for people to reach you.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUTION -->
+        <section class="solution container">
+            <div class="section-label animate">One link that does the work for you.</div>
+            <h2 class="section-title animate">Your own mobile contact page.</h2>
+            <p class="section-sub animate">Send one link. Customers see everything — what you do, how much it costs, and how to book. All from their phone.</p>
+
+            <div class="card-3d-scene animate" id="cardScene">
+                <div class="card-glow"></div>
+                <div class="card-3d" id="card3d">
+                    <div class="card-badge">Hair &amp; Beauty</div>
+                    <div class="card-avatar">CM</div>
+                    <div class="card-name">Carla Marais</div>
+                    <div class="card-tagline">Mobile hair services · Gordons Bay</div>
+                    <div class="card-links">
+                        <div class="card-link card-link-whatsapp">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Message on WhatsApp
+                        </div>
+                        <div class="card-link card-link-call">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .93h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                            Call
+                        </div>
+                        <div class="card-link card-link-email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+                            Email
+                        </div>
+                    </div>
+                    <div class="card-divider"></div>
+                    <div class="card-services">
+                        <div class="card-svc"><span class="card-svc-name">Haircuts</span><span class="card-svc-price">From R180</span></div>
+                        <div class="card-svc"><span class="card-svc-name">Colouring</span><span class="card-svc-price">From R350</span></div>
+                        <div class="card-svc"><span class="card-svc-name">Treatments</span><span class="card-svc-price">From R200</span></div>
+                        <div class="card-svc"><span class="card-svc-name">Location</span><span class="card-svc-price">Gordons Bay</span></div>
+                    </div>
+                    <div class="card-social">
+                        <div class="card-social-icon">f</div>
+                        <div class="card-social-icon">📷</div>
+                    </div>
+                    <div class="card-footer-bar"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PACKAGES -->
+        <section class="packages container" id="packages">
+            <div class="section-label animate">Packages</div>
+            <div class="packages-grid">
+                <div class="package-card animate">
+                    <div class="package-name">Basic Contact Page</div>
+                    <div class="package-for">for new businesses</div>
+                    <div class="package-price">R300</div>
+                    <div class="package-time">Was R600 · 50% off launch special</div>
+                    <ul class="package-features">
+                        <li>Mobile contact page</li>
+                        <li>Your services &amp; prices</li>
+                        <li>WhatsApp booking button</li>
+                        <li>Your own link</li>
+                        <li>Light &amp; dark mode support</li>
+                    </ul>
+                </div>
+
+                <div class="package-card featured animate">
+                    <div class="package-badge">Most popular</div>
+                    <div class="package-name">Contact Hub</div>
+                    <div class="package-for">for growing businesses</div>
+                    <div class="package-price">R1 250</div>
+                    <div class="package-time">Was R1 800 · 30% off · Live in 24h</div>
+                    <ul class="package-features">
+                        <li>Everything in Basic</li>
+                        <li>Photo gallery (up to 6)</li>
+                        <li>Business hours</li>
+                        <li>Location with map link</li>
+                        <li>Customer reviews section</li>
+                        <li>Social media links</li>
+                    </ul>
+                </div>
+
+                <div class="package-card animate">
+                    <div class="package-name">Website + Domain</div>
+                    <div class="package-for">for established businesses</div>
+                    <div class="package-price">R2 500</div>
+                    <div class="package-time">Was R2 950 · 15% off · Domain 1yr included</div>
+                    <ul class="package-features">
+                        <li>Single-page website</li>
+                        <li>Your choice of domain (excl. .co.za)</li>
+                        <li>Domain hosted for 1 year</li>
+                        <li>Everything in Contact Hub</li>
+                        <li>Custom brand colours</li>
+                        <li>Priority 24h delivery</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="stats container">
+            <div class="stats-grid">
+                <div class="stat-card animate">
+                    <div class="stat-number">24h</div>
+                    <div class="stat-label">Entry page live</div>
+                </div>
+                <div class="stat-card animate">
+                    <div class="stat-number">R0</div>
+                    <div class="stat-label">Monthly fees ever</div>
+                </div>
+                <div class="stat-card animate">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">WhatsApp from you to start</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq container">
+            <h2 class="section-title animate">Objection busters</h2>
+            <div class="faq-list">
+                <div class="faq-item animate">
+                    <div class="faq-q">I already have Facebook — isn't that enough?</div>
+                    <div class="faq-a">Facebook makes people scroll through posts to find your contact info. A contact page puts everything in one spot — services, prices, and a one-tap WhatsApp button. No scrolling required.</div>
+                </div>
+                <div class="faq-item animate">
+                    <div class="faq-q">I can't afford it right now.</div>
+                    <div class="faq-a">It's a once-off R300. No monthly fees, ever. You pay once and it's yours.</div>
+                </div>
+                <div class="faq-item animate">
+                    <div class="faq-q">I won't know how to update it.</div>
+                    <div class="faq-a">You won't need to. Once it's set up, it stays live and working. If you need changes later, just WhatsApp me and I'll update it for you — free of charge.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BLOCK -->
+        <section class="cta-block container">
+            <div class="cta-card animate">
+                <h2>Ready to get your link?</h2>
+                <p>Send me your business name, what you offer, and your area. Live link in 24 hours.</p>
+                <a href="https://wa.me/27000000000?text=Hi%2C%20I%27d%20like%20to%20get%20a%20contact%20page%20set%20up." class="btn btn-large">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Message me on WhatsApp
+                </a>
+                <div class="cta-sub">No commitment. No pressure. Just a quick chat.</div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer container">
+            Helderberg, Western Cape · 2026
+        </footer>
+    </div>
+
+    <script>
+        // ── Smooth anchor scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ── 3D Card tilt (mousemove on scene)
+        const scene = document.getElementById('cardScene');
+        const card = document.getElementById('card3d');
+        if (scene && card) {
+            const rotX = 15; // max rotation on X axis
+            const rotY = 18; // max rotation on Y axis
+
+            scene.addEventListener('mousemove', (e) => {
+                const rect = scene.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+                const dx = (e.clientX - cx) / (rect.width / 2);
+                const dy = (e.clientY - cy) / (rect.height / 2);
+                card.style.transform =
+                    `rotateX(${-dy * rotX}deg) rotateY(${dx * rotY}deg) translateZ(20px) scale(1.12)`;
+            });
+
+            scene.addEventListener('mouseleave', () => {
+                card.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0px)';
+            });
+        }
+    </script>
+
+    <!-- REPLACE 27000000000 WITH YOUR WHATSAPP NUMBER -->
+</body>
+</html>
