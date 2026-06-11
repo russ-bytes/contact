@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>sudoDEV | Digital Business Card</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
     /* =============================================
        DESIGN TOKENS
     ============================================= */
     :root {
-      --void:    #07070D;
+      --void:    #1A1F3E;
       --surface: #0F0F1C;
       --phone-body-top: #1A1F36;
       --phone-body-mid: #0F172A;
@@ -881,6 +882,12 @@
       .phone-persp { transform: scale(0.76); }
       .scene { gap: 10px; }
     }
+    @media (max-width: 600px) {
+      .g { filter: blur(60px); }
+      .g1 { opacity: 0.12; }
+      .g2 { opacity: 0.09; }
+      .g3 { opacity: 0.08; }
+    }
   </style>
 </head>
 <body>
@@ -897,8 +904,8 @@
 
     <!-- Brand heading -->
     <header class="brand">
-      <div class="brand-name">RUSS // SYSTEMS</div>
-      <div class="brand-sub">// operational infrastructure</div>
+      <div class="brand-name">sudoDEV</div>
+      <div class="brand-sub">// client augmentation</div>
     </header>
 
     <!-- Phone -->
@@ -925,8 +932,8 @@
             <!-- ── HOME SCREEN ── -->
             <div class="home" id="homeScreen" role="main">
 
-              <div class="home-name">Wealth Systems</div>
-              <div class="home-role">// bespoke technical operations</div>
+              <div class="home-name">sudoDEV</div>
+              <div class="home-role">// augmented client engagement</div>
 
               <nav class="apps" aria-label="App shortcuts">
                 <button class="app app-wa" tabindex="0" aria-label="WhatsApp" onclick="openPanel('wa')">
@@ -986,7 +993,7 @@
               </div>
 
               <a class="wa-cta"
-                 href="https://wa.me/27000000000?text=Hey%20Russ!%20Saw%20your%20digital%20card%20and%20want%20to%20chat."
+                 href="https://russ-bytes.github.io/contact-page-offer/"
                  target="_blank"
                  rel="noopener">
                 💬 Let's Connect on WhatsApp
@@ -1007,22 +1014,22 @@
               <div class="info-hdr">
                 <div class="info-av">R</div>
                 <div class="info-nm">Russ</div>
-                <div class="info-role">// systems architect & technical operator</div>
+                <div class="info-role">// client augmentation specialist</div>
               </div>
 
               <div class="info-body">
                 <p class="info-bio">
-                  I engineer high-leverage technical infrastructure for business operations, converting manual bottlenecks into stable, predictable, automated workflows.
+                  I help businesses enhance their client engagement through thoughtful technological solutions focused on practical results.
                 </p>
                 <div class="tags">
-                  <span class="tag">Systems Architecture</span>
-                  <span class="tag">Process Automation</span>
-                  <span class="tag">Infrastructure Design</span>
-                  <span class="tag">Western Cape</span>
+                  <span class="tag">Client Engagement</span>
+                  <span class="tag">Process Improvement</span>
+                  <span class="tag">Business Optimization</span>
+                  <span class="tag">Gordons Bay</span>
                 </div>
                 <div class="socials">
                   <a class="soc-lnk" href="https://linkedin.com/in/russ-bytes" target="_blank" rel="noopener">LinkedIn</a>
-                  <a class="soc-lnk" href="https://github.com/russ-bytes" target="_blank" rel="noopener">Systems Portal</a>
+                  <a class="soc-lnk" href="https://github.com/russ-bytes" target="_blank" rel="noopener">GitHub</a>
                 </div>
               </div>
             </div>
@@ -1035,30 +1042,37 @@
               <button class="pback" onclick="closePanel()">&#8592; back</button>
 
               <div class="phdr">
-                <div class="phdr-title">Operational Architecture</div>
-                <div class="phdr-sub">// infrastructure services</div>
+                <div class="phdr-title">What I do</div>
+                <div class="phdr-sub">// services for small business</div>
               </div>
 
               <div class="svc-list">
                 <div class="svc-card">
-                  <div class="svc-ico">⚙️</div>
+                  <div class="svc-ico">🌐</div>
                   <div>
-                    <div class="svc-nm">System Infrastructure</div>
-                    <div class="svc-dx">Designing clean, fast operational landing portals and data pipes to anchor your business workflows.</div>
+                    <div class="svc-nm">Web Presence</div>
+                    <div class="svc-dx">Minimal, fast, and effective landing pages. Just like this one.</div>
                   </div>
                 </div>
                 <div class="svc-card">
                   <div class="svc-ico">🤖</div>
                   <div>
-                    <div class="svc-nm">High-Leverage Automation</div>
-                    <div class="svc-dx">Eliminating manual overhead by wiring systems that communicate seamlessly, protecting operational time.</div>
+                    <div class="svc-nm">Engagement Enhancement</div>
+                    <div class="svc-dx">Improve client interaction through thoughtful technological solutions that save time and increase satisfaction.</div>
                   </div>
                 </div>
                 <div class="svc-card">
-                  <div class="svc-ico">📈</div>
+                  <div class="svc-ico">🔧</div>
                   <div>
-                    <div class="svc-nm">Constraint Remediation</div>
-                    <div class="svc-dx">Isolating tech debt and custom-building targeted technical infrastructure to break business operational ceilings.</div>
+                    <div class="svc-nm">Custom Solutions</div>
+                    <div class="svc-dx">Tailored implementations designed specifically for your business needs and workflows.</div>
+                  </div>
+                </div>
+                <div class="svc-card">
+                  <div class="svc-ico">📄</div>
+                  <div>
+                    <div class="svc-nm">Streamlined Documentation</div>
+                    <div class="svc-dx">Efficient document handling that reduces manual work and improves accuracy.</div>
                   </div>
                 </div>
               </div>
@@ -1072,25 +1086,25 @@
               <button class="pback" onclick="closePanel()">&#8592; back</button>
 
               <div class="phdr">
-                <div class="phdr-title">Case Deployments</div>
-                <div class="phdr-sub" style="color:rgba(252,211,77,0.6);">// optimization history</div>
+                <div class="phdr-title">Recent Work</div>
+                <div class="phdr-sub" style="color:rgba(252,211,77,0.6);">// projects &amp; builds</div>
               </div>
 
               <div class="work-list">
                 <div class="work-card">
-                  <div class="work-nm">Client Intake Infrastructure</div>
-                  <div class="work-dx">Custom client portal engines optimized for lightning-fast edge loading and instant context capture.</div>
-                  <span class="work-tag">Infrastructure Optimization</span>
+                  <div class="work-nm">Client Engagement Interface</div>
+                  <div class="work-dx">Very quick to set up a contacts page such as this very one, also customized.</div>
+                  <span class="work-tag">User Experience Focus</span>
                 </div>
                 <div class="work-card">
-                  <div class="work-nm">Lead Routing Pipeline</div>
-                  <div class="work-dx">Automated, programmatic capture and sanitization of business leads routed instantly into analytical storage or custom CRM nodes.</div>
-                  <span class="work-tag">Throughput Engineering</span>
+                  <div class="work-nm">Lead Management System</div>
+                  <div class="work-dx">Streamlined process for capturing, tracking, and following up with potential clients. It will be streamed to your CRM tool of choice or cheaper less expensive app I can provide advice on.</div>
+                  <span class="work-tag">Workflow Optimization</span>
                 </div>
                 <div class="work-card">
-                  <div class="work-nm">Dynamic Document Engines</div>
-                  <div class="work-dx">Algorithmic generation of complex business frameworks and quotes mapping specific parameter boundaries directly to operational outputs.</div>
-                  <span class="work-tag">System Automation</span>
+                  <div class="work-nm">Proposal Generator</div>
+                  <div class="work-dx">Quickly create professional proposals and estimates based on client requirements; the generator can be customized to produce tailored results.</div>
+                  <span class="work-tag">Client Communication</span>
                 </div>
               </div>
             </div>
